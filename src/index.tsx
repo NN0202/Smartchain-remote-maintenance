@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './i18n'; // 导入 i18n 配置文件
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

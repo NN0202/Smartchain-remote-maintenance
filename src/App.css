@@ -1,38 +1,103 @@
-.App {
-  text-align: center;
+/* src/App.css */
+
+/* 整体主题（可根据需要替换颜色变量） */
+:root {
+  --primary-color: #1890ff;
+  --sider-bg: #001529;
+  --sider-text: #fff;
+  --sider-hover-bg: #0d1a2b;
+  --sider-active-bg: #10213f;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Logo 区域 */
+.logo {
+  height: 64px;
+  margin: 16px;
+  background: var(--sider-bg);
+  border-radius: 8px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: start;
+  padding: 0 16px;
+  transition: all 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.logo img {
+  height: 32px;
+  margin-right: 12px;
+  transition: transform 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo h1 {
+  color: var(--sider-text);
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  transition: opacity 0.3s;
 }
+
+/* 折叠态下 Logo 缩放 */
+.sider-collapsed .logo img {
+  transform: scale(1.2);
+}
+
+.sider-collapsed .logo h1 {
+  opacity: 0;
+}
+
+/* 菜单 */
+.ant-layout-sider {
+  background: var(--sider-bg) !important;
+}
+
+.ant-menu {
+  background: transparent !important;
+}
+
+.ant-menu-item,
+.ant-menu-submenu-title {
+  color: var(--sider-text) !important;
+  transition: background 0.3s;
+}
+
+/* Hover 效果 */
+.ant-menu-item:hover {
+  background: var(--sider-hover-bg) !important;
+}
+
+/* 选中态 */
+.ant-menu-item-selected {
+  background: var(--sider-active-bg) !important;
+  color: var(--primary-color) !important;
+}
+
+/* 图标联动变色 */
+.ant-menu-item-selected .anticon,
+.ant-menu-item:hover .anticon {
+  color: var(--primary-color) !important;
+}
+
+/* Header 调整 */
+.app-header {
+  padding: 0 24px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* Drawer 内容 */
+.ant-drawer-body {
+  padding: 0;
+}
+
+.ant-list-item {
+  padding: 12px 24px !important;
+  transition: background 0.2s;
+}
+
+.ant-list-item:hover {
+  background: #f5f5f5 !important;
+}
+
